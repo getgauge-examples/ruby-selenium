@@ -23,4 +23,4 @@ cd $OUTPUT_DIR
 
 echo
 
-/bin/bash GAUGE_PREFIX=$1 install.sh
+GAUGE_PREFIX=$1 /bin/bash install.sh

@@ -16,10 +16,11 @@ before_install:
   - nohup java -jar activeadmin-demo.war >/dev/null 2>&1 &
   - sleep 30
   - sudo apt-get install unzip
-  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/Downloads
-  - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
-  - chmod +x ~/Downloads/chromedriver
-  - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable
+
 install:
   - bundle exec gauge specs
   - heroku maintenance:on --app gauge-example-reports

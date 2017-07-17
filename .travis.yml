@@ -2,6 +2,11 @@ os:
   - linux
 language: ruby
 sudo: required
+addons:
+  packages:
+    - unzip
+    - google-chrome-stable
+
 before_install:
   - sh ./install_latest_gauge.sh /tmp
   - source ~/.profile

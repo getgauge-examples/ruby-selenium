@@ -21,6 +21,6 @@ unzip $GAUGE_FILE_NAME -d $OUTPUT_DIR
 
 cd $OUTPUT_DIR
 
-echo
+echo $CONTINUOUS_INTEGRATION
 
-GAUGE_PREFIX=$1 /bin/bash install.sh
+GAUGE_PLUGINS="" GAUGE_PREFIX=$1 /bin/bash install.sh

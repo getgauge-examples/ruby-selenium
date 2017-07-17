@@ -21,4 +21,6 @@ unzip $GAUGE_FILE_NAME -d $OUTPUT_DIR
 
 cd $OUTPUT_DIR
 
+echo
+
 /bin/bash GAUGE_PREFIX=$1 install.sh

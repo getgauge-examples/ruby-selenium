@@ -1,0 +1,26 @@
+os:
+  - linux
+language: ruby
+before_install:
+  - ./install_latest_gauge.sh /tmp >/dev/null 2>&1
+  - source ~/.profile
+  - gauge --install ruby
+  - bundle install
+  - wget https://bintray.com/artifact/download/gauge/activeadmin-demo/activeadmin-demo.war
+  - nohup java -jar activeadmin-demo.war >/dev/null 2>&1 &
+  - sleep 30
+  - sudo apt-get install unzip
+  - wget -N http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip -P ~/Downloads
+  - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
+  - chmod +x ~/Downloads/chromedriver
+  - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver
+install:
+  - bundle exec gauge specs
+  - heroku maintenance:on --app gauge-example-reports
+  - heroku git:clone -a gauge-example-reports
+  - cd gauge-example-reports
+  - cp -rf ../reports/html-report/* ruby/public
+  - git add .
+  - git commit -m "update Ruby reports for build ${SNAP_PIPELINE_COUNTER}"
+  - git push heroku master
+  - heroku maintenance:off --app gauge-example-reports

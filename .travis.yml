@@ -3,7 +3,7 @@ os:
 language: ruby
 sudo: required
 before_install:
-  - ./install_latest_gauge.sh /tmp
+  - sh ./install_latest_gauge.sh /tmp
   - source ~/.profile
   - gauge --install ruby
   - bundle install

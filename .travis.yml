@@ -11,7 +11,7 @@ before_install:
   - nohup java -jar activeadmin-demo.war >/dev/null 2>&1 &
   - sleep 30
   - sudo apt-get install unzip
-  - wget -N http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip -P ~/Downloads
+  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/Downloads
   - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
   - chmod +x ~/Downloads/chromedriver
   - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver

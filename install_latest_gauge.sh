@@ -23,4 +23,4 @@ cd $OUTPUT_DIR
 
 echo $CONTINUOUS_INTEGRATION
 
-GAUGE_PLUGINS="" GAUGE_PREFIX=$1 /bin/bash install.sh
+GAUGE_PLUGINS="html-report" GAUGE_PREFIX=$1 /bin/bash install.sh

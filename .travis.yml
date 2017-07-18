@@ -5,7 +5,6 @@ sudo: required
 addons:
   packages:
     - unzip
-    - google-chrome-stable
 
 before_install:
   - sh ./install_latest_gauge.sh /tmp
@@ -17,9 +16,10 @@ before_install:
   - sleep 30
   - sudo apt-get install unzip
   - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
   - sudo apt-get update
-  - sudo apt-get install google-chrome-stable
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
 
 install:
   - headless=Y bundle exec gauge specs

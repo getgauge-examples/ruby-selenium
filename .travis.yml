@@ -22,7 +22,7 @@ before_install:
   - sudo apt-get install google-chrome-stable
 
 install:
-  - bundle exec gauge specs
+  - headless=Y bundle exec gauge specs
   - heroku maintenance:on --app gauge-example-reports
   - heroku git:clone -a gauge-example-reports
   - cd gauge-example-reports

@@ -5,6 +5,7 @@ sudo: required
 addons:
   packages:
     - unzip
+    - chrome
 
 before_install:
   - sh ./install_latest_gauge.sh /tmp

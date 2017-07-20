@@ -34,7 +34,7 @@ before_install:
   - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver
 
 install:
-  - bundle exec gauge specs
+  - headless=Y bundle exec gauge specs
   - heroku maintenance:on --app gauge-example-reports
   - heroku git:clone -a gauge-example-reports
   - cd gauge-example-reports

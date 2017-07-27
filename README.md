@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/getgauge-examples/gauge-active-admin-example-ruby.svg?branch=master)](https://travis-ci.org/getgauge-examples/gauge-active-admin-example-ruby)
+[![Build Status](https://travis-ci.org/getgauge-examples/ruby-selenium.svg?branch=master)](https://travis-ci.org/getgauge-examples/ruby-selenium)
 
 # Gauge example in Ruby
 

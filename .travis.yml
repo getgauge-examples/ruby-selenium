@@ -41,14 +41,8 @@ before_install:
   - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
   - chmod +x ~/Downloads/chromedriver
   - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver
+  - sudo apt-get install xvfb
+  - Xvfb :0 -ac -screen 0 1024x768x24 &
 
 install:
   - headless=Y bundle exec gauge specs
-  - heroku maintenance:on --app gauge-example-reports
-  - heroku git:clone -a gauge-example-reports
-  - cd gauge-example-reports
-  - cp -rf ../reports/html-report/* ruby/public
-  - git add .
-  - git commit -m "update Ruby reports for build ${SNAP_PIPELINE_COUNTER}"
-  - git push heroku master
-  - heroku maintenance:off --app gauge-example-reports

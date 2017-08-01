@@ -27,7 +27,7 @@ before_install:
   - source ~/.profile
   - gauge --install ruby
   - bundle install
-  - wget https://bintray.com/artifact/download/gauge/activeadmin-demo/activeadmin-demo.war
+  - wget https://github.com/getgauge-examples/activeadmin-demo/releases/download/v1.0/activeadmin-demo.war
   - java -version
   - java -jar activeadmin-demo.war &
   - sleep 30

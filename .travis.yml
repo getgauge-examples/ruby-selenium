@@ -28,7 +28,7 @@ before_install:
   - gauge --install ruby
   - bundle install
   - wget `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
-  - java -jar activeadmin-demo.war &
+  - bundle exec java -jar activeadmin-demo.war &
   - sleep 30
   - sudo apt-get install unzip
   - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

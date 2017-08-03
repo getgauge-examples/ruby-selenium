@@ -29,8 +29,8 @@ install:
   - source ~/.profile
   - gauge install ruby
   - bundle install
-  - wget -P $HOME `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
-  - java -jar $HOME/activeadmin-demo.war &
+  - wget `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
+  - docker run -v=`pwd`:$HOME/host -p 8080:8080 loyaltyone/docker-alpine-java-node java -jar $HOME/host/activeadmin-demo.war &
   - sleep 30
   - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/Downloads
   - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads

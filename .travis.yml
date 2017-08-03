@@ -25,8 +25,9 @@ addons:
     - fonts-liberation
     - xvfb
 before_install:
+  - docker pull loyaltyone/docker-alpine-java-node
   - wget `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
-  - docker run -d -v=`pwd`:$HOME/host -p 127.0.0.1:8080:8080 loyaltyone/docker-alpine-java-node java -jar $HOME/host/activeadmin-demo.war &
+  - docker run -d -v=`pwd`:$HOME/host -p 127.0.0.1:8080:8080 loyaltyone/docker-alpine-java-node java -jar $HOME/host/activeadmin-demo.war
   - docker ps -a
 install:
   - sh ./install_latest_gauge.sh /tmp

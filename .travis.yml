@@ -21,28 +21,22 @@ addons:
     - google-chrome-stable
   packages:
     - unzip
-
-before_install:
+    - libappindicator1 
+    - fonts-liberation
+    - xvfb
+install:
   - sh ./install_latest_gauge.sh /tmp
   - source ~/.profile
-  - gauge --install ruby
+  - gauge install ruby
   - bundle install
   - wget -P $HOME `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
-  - /bin/sh -c "cd $HOME && bundle install && bundle exec java -jar $HOME/activeadmin-demo.war &"
+  - java -jar $HOME/activeadmin-demo.war &
   - sleep 30
-  - sudo apt-get install unzip
-  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  - sudo apt-get update
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -f google-chrome*.deb
-  - sudo apt-get -f install
   - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/Downloads
   - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
   - chmod +x ~/Downloads/chromedriver
   - sudo mv -f ~/Downloads/chromedriver /usr/bin/chromedriver
-  - sudo apt-get install xvfb
   - Xvfb :0 -ac -screen 0 1024x768x24 &
 
-install:
+script:
   - headless=Y bundle exec gauge specs

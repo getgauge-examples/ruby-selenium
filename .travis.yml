@@ -5,14 +5,6 @@ sudo: required
 dist: trusty
 
 addons:
-  artifacts:
-    debug: true
-    paths:
-      - ./reports/html-report
-      - ./reports/xml-report
-    target_paths: $TRAVIS_BUILD_NUMBER
-    working_dir: WORKING_DIR
-    bucket: simplelance
   apt:
     sources:
     - google-chrome
@@ -24,7 +16,8 @@ addons:
     - fonts-liberation
     - xvfb
 before_install:
-  - docker pull loyaltyone/docker-alpine-java-node
+- npm install --global surge
+- docker pull loyaltyone/docker-alpine-java-node
   - wget `curl -s https://api.github.com/repos/getgauge-examples/activeadmin-demo/releases/latest | grep browser_download_url | cut -d '"' -f 4`
   - docker run -d -v=`pwd`:$HOME/host -p 127.0.0.1:8080:8080 loyaltyone/docker-alpine-java-node java -jar $HOME/host/activeadmin-demo.war
   - docker ps -a
@@ -43,3 +36,9 @@ install:
 
 script:
   - headless=Y bundle exec gauge specs
+
+deploy:
+  provider: surge
+  project: ./reports/html-report/
+  domain: gauge-ruby-selenium.surge.sh
+  skip_cleanup: true

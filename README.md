@@ -13,7 +13,7 @@ This example requires the following softwares to run.
   * [ruby-2.3.1](https://www.ruby-lang.org/en/news/2016/04/26/ruby-2-3-1-released/) or above
   * [Gauge](http://getgauge.io/get-started/index.html)
   * Gauge Ruby plugin
-    * can be installed using `gauge --install ruby`
+    * can be installed using `gauge install ruby`
   * Chrome
 
 ### Setting up the System Under Test (SUT)
@@ -35,9 +35,9 @@ This uses Chrome as default browser for specs execution. Make sure Chrome is ins
 If you want to use Firefox/IE as browser, pass the corresponding argument to set browser environment as follows:
 
 ```
-bundle exec gauge specs --env="firefox"
+bundle exec gauge run specs --env="firefox"
 or
-bundle exec gauge specs --env="ie"
+bundle exec gauge run specs --env="ie"
 ```
 
 ## Topics covered in the example

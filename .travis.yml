@@ -1,6 +1,8 @@
 os:
   - linux
 language: ruby
+env:
+  - GAUGE_TELEMETRY_ENABLED=false GAUGE_PREFIX=/tmp
 sudo: required
 dist: trusty
 
@@ -12,7 +14,7 @@ addons:
     - google-chrome-stable
   packages:
     - unzip
-    - libappindicator1 
+    - libappindicator1
     - fonts-liberation
     - xvfb
 before_install:
@@ -22,9 +24,9 @@ before_install:
   - docker ps -a
   - sleep 30
   - npm install --global surge
+  - curl -sSfL https://github.com/getgauge/gauge-tests/raw/master/install_latest_gauge_nightly.sh | bash
+  - export PATH=$PATH:$GAUGE_PREFIX/bin
 install:
-  - sh ./install_latest_gauge.sh /tmp
-  - source ~/.profile
   - gauge install ruby
   - bundle install
   - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/Downloads

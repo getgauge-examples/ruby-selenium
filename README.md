@@ -42,11 +42,11 @@ bundle exec gauge run specs --env="ie"
 
 ## Topics covered in the example
 
-* [Specification](http://getgauge.io/documentation/user/current/specifications/index.html), [Scenario](http://getgauge.io/documentation/user/current/specifications/scenarios.html),  [Step](http://getgauge.io/documentation/user/current/specifications/steps.html), [Concepts](http://getgauge.io/documentation/user/current/specifications/concepts.html) and [Context Steps](http://getgauge.io/documentation/user/current/specifications/contexts.html)
-* [Table parameters](http://getgauge.io/documentation/user/current/specifications/parameters.html#table-parameter)
-* Using [External datasource (special param)](http://getgauge.io/documentation/user/current/specifications/parameters.html#special-parameters)
-* Using [tags](http://getgauge.io/documentation/user/current/specifications/tags.html)
+* [Specification](https://docs.gauge.org/longstart.html#specifications-spec), [Scenario](https://docs.gauge.org/longstart.html#scenarios),  [Steps](https://docs.gauge.org/longstart.html#steps), [Concepts](https://docs.gauge.org/longstart.html#concepts), and [Context Steps](https://docs.gauge.org/longstart.html#contexts)
+* [Parameters](https://docs.gauge.org/longstart.html#parameters) such as [Table parameters](https://docs.gauge.org/longstart.html#table-parameters)
+* Using [External datasource (special param)](https://docs.gauge.org/longstart.html#special-parameters)
+* Using [tags](https://docs.gauge.org/longstart.html#tags)
 * Using Gauge with [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
 
 # Copyright
-Copyright 2016, ThoughtWorks Inc.
+Copyright 2018, ThoughtWorks Inc.

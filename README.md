@@ -42,11 +42,12 @@ bundle exec gauge run specs --env="ie"
 
 ## Topics covered in the example
 
-* [Specification](https://docs.gauge.org/longstart.html#specifications-spec), [Scenario](https://docs.gauge.org/longstart.html#scenarios),  [Steps](https://docs.gauge.org/longstart.html#steps), [Concepts](https://docs.gauge.org/longstart.html#concepts), and [Context Steps](https://docs.gauge.org/longstart.html#contexts)
-* [Parameters](https://docs.gauge.org/longstart.html#parameters) such as [Table parameters](https://docs.gauge.org/longstart.html#table-parameters)
-* Using [External datasource (special param)](https://docs.gauge.org/longstart.html#special-parameters)
-* Using [tags](https://docs.gauge.org/longstart.html#tags)
-* Using Gauge with [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
+- Use [Webdriver](http://docs.seleniumhq.org/projects/webdriver/) as base of implementation
+- [Concepts](https://docs.gauge.org/latest/writing-specifications.html#concept)
+- [Specification](https://docs.gauge.org/latest/writing-specifications.html#specifications-spec), [Scenario](https://docs.gauge.org/latest/writing-specifications.html#longstart-scenarios) & [Step](https://docs.gauge.org/latest/writing-specifications.html#longstart-steps) usage
+- [Table driven execution](https://docs.gauge.org/latest/execution.html#data-driven-execution)
+- [External datasource (special param)](https://docs.gauge.org/latest/execution.html#external-csv-for-data-table)
+- Using Gauge with [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
 
 # Copyright
 Copyright 2018, ThoughtWorks Inc.

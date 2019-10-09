@@ -11,7 +11,7 @@ The tests are run on Chrome by default.
 
 This example requires the following softwares to run.
   * [ruby-2.3.1](https://www.ruby-lang.org/en/news/2016/04/26/ruby-2-3-1-released/) or above
-  * [Gauge](http://getgauge.io/get-started/index.html)
+  * [Gauge](https://docs.gauge.org/getting_started/installing-gauge.html)
   * Gauge Ruby plugin
     * can be installed using `gauge install ruby`
   * Chrome
